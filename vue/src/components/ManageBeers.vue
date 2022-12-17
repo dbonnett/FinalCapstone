@@ -2,7 +2,7 @@
   <div>
     <div id="beersList">
       <h2>Beers on tap:</h2>
-      <ul id="beerList">
+      <ul id="beersList">
         <li v-for="beer in beers" :key="beer.beerId">
           <router-link
             :to="{
@@ -55,5 +55,4 @@ export default {
 li{
   font-size: 24px;
 }
-
 </style>

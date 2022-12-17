@@ -35,12 +35,16 @@ export default {
   methods: {
     addFavorited() {
       BackendServices.addToFavorites(this.favorited);
+      this.$alert("We added that to your favorites for ya'.", "Glug-Glug-Yum!", 'success');
     },
   },
 };
 </script>
 
 <style scoped>
+h1,h2,h3{
+  color: white;
+}
 div {
   text-align: center;
 }

@@ -1,6 +1,8 @@
 <template>
     <div class="home">
+      <br/>
       <cards></cards>
+    
     </div>
 </template>
 

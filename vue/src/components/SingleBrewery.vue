@@ -3,11 +3,9 @@
     <div id="info">
       <h1 id="name">{{ brewery.breweryName }}</h1>
       <h3 id="address">{{ brewery.streetAddress }}</h3>
+      <h3 id="times">{{brewery.timeOpen}} - {{brewery.timeClosed}}</h3>
       <h4>{{brewery.city}}, {{brewery.stateAbv}} {{brewery.zip}}</h4>
       <p>{{ brewery.history }}</p>
-    </div>
-    <div id="beersList">
-      <div id="beer"></div>
     </div>
   </div>
 </template>
@@ -30,6 +28,7 @@ export default {
 </script>
 
 <style>
+
 #info{
   background-image: url("https://cdn.pixabay.com/photo/2018/02/15/14/37/paper-3155438_1280.jpg");
   border-style: inset;

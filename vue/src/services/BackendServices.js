@@ -18,6 +18,9 @@ export default {
     addBeer(beer) {
         return axios.post('/addBeer', beer)
     },
+    deleteBeer(id) {
+        return axios.put(`/beers/${id}`)
+    },
 
     // Breweries
     getAllBreweries() {
@@ -28,6 +31,9 @@ export default {
     },
     addBrewery(brewery) {
         return axios.post('/registerBrewery', brewery)
+    },
+    updateBrewery(breweryId, brewery) {
+        return axios.put(`/breweries/update/${breweryId}`, brewery)
     },
 
     // Reviews    

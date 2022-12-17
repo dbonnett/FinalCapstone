@@ -59,7 +59,7 @@
                 Manage Breweries
               </router-link>
               <hr class="navbar-divider" />
-              <a class="navbar-item"> Report an issue </a>
+              <a class="navbar-item" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> Report an issue </a>
             </div>
           </div>
         </div>
@@ -107,6 +107,7 @@
               <div class="foam-13"></div>
               <div class="foam-14"></div>
               <div class="foam-15"></div>
+              
             </div>
             <div id="liquid">
               <div class="bubble bubble1"></div>
@@ -403,4 +404,5 @@ h2 {
 .navbar {
   z-index: 10000;
 }
+
 </style>

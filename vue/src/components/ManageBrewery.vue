@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>Manage Breweries</h2>
+  <div  style="background-image: url('https://media.istockphoto.com/id/488101157/photo/beer-tasting.jpg?s=612x612&w=0&k=20&c=ZZhqEAqKy4g11PxwTNlXUFscphS_ZHmcDS7q8xi2xJg=');">
+    <h1>Your Brewery</h1>
     <ul>
       <li class="brewery" v-for="brewery in breweries" :key="brewery.breweryID">
         {{ brewery.breweryName }}
@@ -8,33 +8,26 @@
     </ul>
     <div>
       <h1>Update Brewery Info</h1>
-      <button v-on:click="show = !show">Update Brewery Info</button>
-      <button v-on:click="showAddBeer = !showAddBeer">Add a Beer</button>
+      <button class="button-87" v-on:click="show = !show">
+        Update Brewery Info
+      </button>
+      <button class="button-87" v-on:click="showAddBeer = !showAddBeer">
+        Add a Beer
+      </button>
       <add-beer v-if="showAddBeer == true" :breweryId="breweries[0].breweryID"
         >Add a Beer</add-beer
       >
     </div>
-    <button @click="grabBeers()">Manage Beers?</button>
+    <button class="button-87" @click="grabBeers()">Manage Beers?</button>
     <div v-for="beer in beers" :key="beer.beerId">
       <h2>{{ beer.beerName }}</h2>
-    <button @click="deleteBeer(beer.beerId)">Delete this beer.</button>
+      <button class="button-87" @click="deleteBeer(beer.beerId)">
+        Delete this beer.
+      </button>
     </div>
-    <!-- <ul id="beersList" :v-if="showBeers">
-      <li v-for="beer in beers" :key="beer.beerId">{{ beer.beerName }}
-        <router-link
-          :to="{
-            name: 'beerView',
-            params: { id: beer.breweryId, beerID: beer.beerId },
-          }"
-        >
-          {{ beer.beerName }}
-        </router-link>
-      </li>
-    </ul> -->
-
     <form
       id="add-brewery"
-      v-if="show == true"
+      v-show="show == true"
       v-on:submit.prevent="updateBrewery"
     >
       <div>
@@ -122,7 +115,7 @@
           v-model="breweries[0].history"
         ></textarea>
       </div>
-      <button class="button-78" type="submit">Submit</button>
+      <button class="button-78" id="fix" type="submit">Submit</button>
     </form>
   </div>
 </template>
@@ -155,30 +148,33 @@ export default {
       breweries: [],
     };
   },
+
   methods: {
-    deleteBeer(id){
-      BackendServices.deleteBeer(id)
+    deleteBeer(id) {
+      BackendServices.deleteBeer(id);
     },
-    methods: {
-        updateBrewery() {
-        BackendServices.updateBrewery(this.breweries[0].breweryID,this.breweries[0]).then(() => {
-                this.resetForm();
-        });
-       this.$alert("Brewery updated successfully!", "Nice!", 'success');
+    updateBrewery() {
+      BackendServices.updateBrewery(
+        this.breweries[0].breweryID,
+        this.breweries[0]
+      ).then(() => {
+        this.resetForm();
+      });
+      this.$alert("Brewery updated successfully!", "Nice!", "success");
     },
     resetForm() {
       this.updatedBrewery = {};
     },
-    grabBeers(){
-      BackendServices.getBeerList(this.breweries[0].breweryID)
-      .then((returned) => {
-        returned.data.forEach((element) => {
-          this.beers.push(element);
-        });
-      });
+    grabBeers() {
+      BackendServices.getBeerList(this.breweries[0].breweryID).then(
+        (returned) => {
+          returned.data.forEach((element) => {
+            this.beers.push(element);
+          });
+        }
+      );
       this.showBeers = true;
-
-    }
+    },
   },
   created() {
     this.updatedBrewery = BackendServices.findBreweriesByBrewerId(
@@ -189,13 +185,28 @@ export default {
         console.log(this.breweries[0]);
       });
     });
-    this.breweryID = this.breweries[0].breweryID
+    this.breweryID = this.breweries[0].breweryID;
   },
 };
 </script>
 
 <style scoped>
-textarea{
+#rootMB {
+  background-image: url("https://media.istockphoto.com/id/488101157/photo/beer-tasting.jpg?s=612x612&w=0&k=20&c=ZZhqEAqKy4g11PxwTNlXUFscphS_ZHmcDS7q8xi2xJg=");
+  height: 100vh;
+  background-size: auto;
+}
+textarea {
+  width: 100%;
+}
+.button-87 {
+  margin: auto;
+}
+h2 {
+  text-align: center;
+  color:antiquewhite;
+}
+#fix {
   width: 100%;
 }
 </style>

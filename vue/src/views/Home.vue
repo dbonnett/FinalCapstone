@@ -1,20 +1,22 @@
 <template>
     <div class="home">
-      <br/>
+      <br>
       <cards></cards>
-    
+      <carousel></carousel>
     </div>
 </template>
 
 <script>
 import Cards from "../components/Cards.vue";
+import Carousel from '../components/carousel.vue';
+
 
 export default {
   created() {
     this.$store.commit("SET_BREWERIES");
     this.$store.commit("SET_TYPE");
   },
-  components: { Cards },
+  components: { Cards, Carousel },
 
   Cards,
 };
@@ -159,4 +161,5 @@ export default {
   cursor: default;
   opacity: 0.24;
 }
+
 </style>

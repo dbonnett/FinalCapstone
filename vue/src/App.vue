@@ -7,7 +7,7 @@
     >
       <div class="navbar-brand">
         <a class="navbar-item" href="http://localhost:8080/">
-          <img src="..\randompicturesofbeer\output-onlinepngtools.png" />
+          <img src="../randompicturesofbeer/output-onlinepngtools.png" />
         </a>
 
         <a
@@ -125,7 +125,7 @@
           <div id="left">
             <img
               class="logo"
-              src="..\randompicturesofbeer\output-onlinepngtools.png"
+              src="../randompicturesofbeer/output-onlinepngtools.png"
             />
             <h1>GrogSpotter</h1>
           </div>

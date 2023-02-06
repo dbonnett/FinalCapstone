@@ -60,7 +60,7 @@
             <div class="media-left">
               <figure class="image is-64x64">
                 <img
-                  src="@/..\randompicturesofbeer\Screenshot 2022-12-15 131658.png"
+                  src="../../randompicturesofbeer/Screenshot 2022-12-15 131658.png"
                   alt="Image"
                 />
               </figure>

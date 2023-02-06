@@ -14,7 +14,7 @@
         class="wholeRating"
         v-for="num in avgFloor"
         :key="num"
-        src="@/../randompicturesofbeer/HopsIcon-removebg-preview.png"
+        src="../../randompicturesofbeer/HopsIcon-removebg-preview.png"
         alt=""
       />
 
@@ -22,7 +22,7 @@
         class="wholeRating"
         v-for="num in 5 - avgFloor"
         :key="num"
-        src="@/../randompicturesofbeer/GhostHop.png"
+        src="../../randompicturesofbeer/GhostHop.png"
         alt=""
       />
     </div>
@@ -75,14 +75,14 @@
         class="hop"
         v-for="rating in review.rating"
         :key="rating"
-        src="@/../randompicturesofbeer\HopsIcon-removebg-preview.png"
+        src="../../randompicturesofbeer/HopsIcon-removebg-preview.png"
         alt="hops icon"
       />
       <img
         class="hop"
         v-for="thing in 5 - review.rating"
         :key="thing"
-        src="@/../randompicturesofbeer/LightGhost.png"
+        src="../../randompicturesofbeer/LightGhost.png"
         alt="ghost hop"
       />
       <p>{{ review.reviewBody }}</p>
